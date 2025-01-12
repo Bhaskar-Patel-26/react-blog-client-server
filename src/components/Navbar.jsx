@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "./Image";
 import { Link } from "react-router-dom";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -39,9 +40,14 @@ const Navbar = () => {
         <Link to="/posts">Trending</Link>
         <Link to="/posts">Most Popular</Link>
         <Link to="/about">About</Link>
-        <Link to="/login">
+        <SignedOut>
+          <Link to="/login">
             <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">Login 👋</button>
-        </Link>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );
