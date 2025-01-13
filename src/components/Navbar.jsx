@@ -23,7 +23,7 @@ const Navbar = () => {
           {openMenu ? "x" : "≡"}
         </div>
         {/* MOBILE LINK LIST */}
-        <div className={`w-full h-screen flex flex-col items-center justify-center gap-5 text-lg font-medium absolute top-16 transition-all ease-in-out ${openMenu ? "-right-0" : "-right-[100%]"}`}>
+        <div className={`bg-gray-300 w-full h-screen flex flex-col items-center justify-center gap-5 text-lg font-medium absolute top-16 transition-all ease-in-out ${openMenu ? "-right-0" : "-right-[100%]"}`}>
             <Link to="/" onClick={()=> setOpenMenu(false)}>Home</Link>
             <Link to="/posts" onClick={()=> setOpenMenu(false)}>Trending</Link>
             <Link to="/posts" onClick={()=> setOpenMenu(false)}>Most Popular</Link>
