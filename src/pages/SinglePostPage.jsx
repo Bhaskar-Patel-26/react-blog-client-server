@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Image from "../components/Image";
 import PostMenuAction from "../components/PostMenuAction";
 import Search from "../components/Search";
+import Comments from "../components/Comments";
 
 const SinglePostPage = () => {
   return (
@@ -16,9 +17,9 @@ const SinglePostPage = () => {
           </h1>
           <div className="flex items-center gap-2 text-gray-400 text-sm">
             <span>Written by</span>
-            <Link className="text-blue-800">John Doe</Link>
+            <Link to="/test" className="text-blue-800">John Doe</Link>
             <span>on</span>
-            <Link className="text-blue-800">Web Design</Link>
+            <Link to="/test" className="text-blue-800">Web Design</Link>
             <span>2 days ago</span>
           </div>
           <p className="text-gray-500 font-medium">
@@ -110,40 +111,40 @@ const SinglePostPage = () => {
         </div>
 
         {/* MENU */}
-        <div className="px-4 h-max sticky top-8">
+        <div className="px-5 h-max sticky top-5">
           <h1 className="mb-4 text-sm font-medium">Author</h1>
-          <div className="flex items-center gap-2">
-            <Image
-              src="userImg.jpeg"
-              className="w-12 h-12 rounded-full object-cover"
-              w="48"
-              h="48"
-            />
-            <Link>John Doe</Link>
+          <div className="flex items-center gap-2 mb-2">
+            <Image src="userImg.jpeg" className="w-10 h-10 rounded-full object-cover" w="48" h="48" />
+            <Link to="/test">John Doe</Link>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <div className="flex gap-2">
-            <Link>
+          <div className="flex gap-2 mt-2">
+            <Link to="/test">
               <Image src="facebook.svg" />
             </Link>
-            <Link>
+            <Link to="/test">
               <Image src="instagram.svg" />
             </Link>
           </div>
+
           <PostMenuAction />
-          <h1 className="mt-8 mb-4 text-sm font-medium">Categories</h1>
+
+          <h1 className="mt-5 mb-2 text-sm font-medium">Categories</h1>
           <div className="flex flex-col gap-2 text-sm">
-            <Link className="underline">All</Link>
-            <Link className="underline">Web Design</Link>
-            <Link className="underline">Development</Link>
-            <Link className="underline">Databases</Link>
-            <Link className="underline">SEO</Link>
-            <Link className="underline">Marketing</Link>
+            <Link to="/test" className="underline">All</Link>
+            <Link to="/test" className="underline">Web Design</Link>
+            <Link to="/test" className="underline">Development</Link>
+            <Link to="/test" className="underline">Databases</Link>
+            <Link to="/test" className="underline">SEO</Link>
+            <Link to="/test" className="underline">Marketing</Link>
           </div>
-          <h1 className="mt-8 mb-4 text-sm font-medium">Search</h1>
+
           <Search />
         </div>
       </div>
+
+      {/* COMMENTS */}
+      <Comments />
     </div>
   );
 };
